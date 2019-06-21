@@ -1,7 +1,7 @@
 # daa
 
 A Clojure library designed to ... well, that part is up to you.
-
+[APIs doc](https://ashutosh-soni.github.io/daa/)
 ## Usage
 
 FIXME
