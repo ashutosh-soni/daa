@@ -1,5 +1,40 @@
 (ns daa.binary-search-tree)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Binary Search Tree is a node-based binary tree data structure                 ;;
+;; which has the following properties:                                           ;;
+;;                                                                               ;;
+;; 1. The left subtree of a node contains only nodes with keys lesser            ;;
+;;    than the node’s key.                                                       ;;
+;; 2. The right subtree of a node contains only nodes with keys greater          ;;
+;;    than the node’s key.                                                       ;;
+;; 3. The left and right subtree each must also be a binary search tree.         ;;
+;;                                                                               ;;
+;; * Insertion of a key                                                          ;;
+;; A new key is always inserted at leaf. We start searching a key from root      ;;
+;; till we hit a leaf node. Once a leaf node is found,                           ;;
+;; the new node is added as a child of the leaf node.                            ;;
+;;                                                                               ;;
+;; * Searching a key                                                             ;;
+;; To search a given key in Binary Search Tree, we first compare it with root,   ;;
+;; if the key is present at root, we return root. If key is greater than         ;;
+;; root’s key, we recur for right subtree of root node.                          ;;
+;; Otherwise we recur for left subtree.                                          ;;
+;;                                                                               ;;
+;; * Deletion                                                                    ;;
+;; When we delete a node, three possibilities arise.                             ;;
+;; 1. Node to be deleted is leaf: Simply remove from the tree.                   ;;
+;; 2. Node to be deleted has only one child: Copy the child to the node          ;;
+;;    and delete the child.                                                      ;;
+;; 3. Node to be deleted has two children: Find inorder successor of the node.   ;;
+;;    Copy contents of the inorder successor to the node and                     ;;
+;; delete the inorder successor. Note that inorder predecessor can also be used. ;;
+;;                                                                               ;;
+;; NOTE: The important thing to note is, inorder successor is needed only        ;;
+;; when right child is not empty. In this particular case, inorder successor     ;;
+;; can be obtained by finding the minimum value in right child of the node.      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defrecord Node [data left right])
 
 
